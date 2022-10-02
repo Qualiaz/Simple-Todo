@@ -18,27 +18,40 @@ projectsContainer.appendChild(projectsContainerAdd);
 projectsContainerAdd.appendChild(inputProject);
 projectsContainerAdd.appendChild(addProjectBtn);
 
-export const projectsContainerList = document.createElement("div");
+const projectsContainerList = document.createElement("div");
 projectsContainerList.setAttribute("class", "projects__container--list");
 projectsContainer.appendChild(projectsContainerList);
 const projectsList = document.createElement("ul");
 projectsContainerList.appendChild(projectsList);
 
-export default function projectsRender(id) {
-  const projectLi = document.createElement("li");
-  projectsList.appendChild(projectLi);
+// export default function addProjectRender(id) {
+//   const projectLi = document.createElement("li");
+//   projectsList.appendChild(projectLi);
 
-  const projectBtnName = document.createElement("input");
-  projectBtnName.setAttribute("type", "button");
-  projectBtnName.setAttribute("id", id);
-  projectBtnName.setAttribute("class", "projects__button");
-  projectLi.appendChild(projectBtnName);
-  projectBtnName.value = inputProject.value;
-  inputProject.value = "";
+//   const projectBtnName = document.createElement("input");
+//   projectBtnName.setAttribute("type", "button");
+//   projectBtnName.setAttribute("id", id);
+//   projectBtnName.setAttribute("class", "projects__button");
+//   projectLi.appendChild(projectBtnName);
+//   projectBtnName.value = inputProject.value;
+//   inputProject.value = "";
 
-  return projectBtnName;
-}
+//   return projectBtnName;
+// }
 
-function renderProjectsArray() {
-  // render projects
+export function projectsRender() {
+  projectsList.textContent = "";
+  projects.forEach((e) => {
+    const projectLi = document.createElement("li");
+    projectsList.appendChild(projectLi);
+
+    const projectBtnName = document.createElement("input");
+    projectBtnName.setAttribute("type", "button");
+    projectBtnName.setAttribute("id", e.id);
+    projectBtnName.setAttribute("class", "projects__button");
+    projectLi.appendChild(projectBtnName);
+    projectBtnName.value = e.name;
+
+    return e.id;
+  });
 }
