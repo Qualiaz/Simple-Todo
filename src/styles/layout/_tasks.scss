@@ -1,4 +1,31 @@
 .tasks {
   &__container {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--project-name {
+      align-self: flex-start;
+      margin-left: 1rem;
+    }
+
+    &--add {
+    }
+
+    &--list {
+    }
   }
+
+  &__add_container {
+  }
+}
+
+ul {
+  border: 1px solid black;
+}
+
+li {
+  list-style: none;
 }

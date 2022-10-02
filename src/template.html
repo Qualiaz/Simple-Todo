@@ -9,28 +9,39 @@
   <body>
     <header class="header"></header>
     <main class="main__container">
-      <div class="project__container">
-        <div class="project__name"></div>
-        <div class="tasks__container">
-          <ul>
-            <li id="task-1">
-              <input type="checkbox" name="Run" value="Run" />
-              <label for="Run"> Run</label><br />
-            </li>
+      <!-- PROJECTS -->
+      <div class="projects__container"></div>
 
-            <li>
-              <input type="checkbox" name="Love" value="Love" />
-              <label for="Love"> Love</label><br />
-            </li>
-            <li>
-              <input type="checkbox" name="Move" value="Move" />
-              <label for="Move"> Move</label><br />
-            </li>
-          </ul>
+      <!-- TASKS -->
+      <div class="tasks__container">
+        <div class="tasks__container--project-name">
+          <h2>Workout</h2>
         </div>
-      </div>
+        <br />
 
-      <footer></footer>
+        <div class="tasks__container--add">
+          <input type="text" name="taskName" id="taskInput"= />
+          <button id="addTask">Add task</button>
+        </div>
+        <br />
+
+        <!-- Render tasks  -->
+        <ul class="tasks__container--list">
+          <li id="task-1">
+            <input type="checkbox" name="Run" value="Run" />
+            <label for="Run"> Run</label><br />
+          </li>
+          <li>
+            <input type="checkbox" name="Love" value="Love" />
+            <label for="Love"> Love</label><br />
+          </li>
+          <li>
+            <input type="checkbox" name="Move" value="Move" />
+            <label for="Move"> Move</label><br />
+          </li>
+        </ul>
+      </div>
     </main>
+    <footer></footer>
   </body>
 </html>
