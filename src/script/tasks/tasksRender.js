@@ -42,11 +42,11 @@ export default function tasksRender(project) {
     const taskLi = document.createElement("li");
     taskLi.setAttribute("id", task.id);
     tasksContainerList.appendChild(taskLi);
-    // tasksContainerList.prepend(taskLi);
 
     const checkBoxTask = document.createElement("input");
     const labelTask = document.createElement("label");
     checkBoxTask.setAttribute("type", "checkbox");
+    checkBoxTask.setAttribute("id", `${task.id}-cp`);
     checkBoxTask.setAttribute("value", task.name);
     checkBoxTask.setAttribute("name", task.name);
     labelTask.setAttribute("for", task.name);

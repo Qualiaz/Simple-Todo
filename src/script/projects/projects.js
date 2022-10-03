@@ -9,7 +9,8 @@ export default class Project {
   constructor(name) {
     this.name = name;
     this.tasks = [];
-    this.archivedTasks = [];
+    // this.archivedTasks = [];
+    this.completedTasks = [];
 
     Project.count += 1;
     this.id = `p-${Project.count}`;
@@ -32,12 +33,13 @@ export default class Project {
   }
 
   completeTask(id) {
-    //currTask = get id from task clicked
-    //currTask === e.id ? remove from tasks, send to archived
-  }
-
-  renderTasks() {
-    render(this.tasks);
+    this.tasks.forEach((task, i, arr) => {
+      if (task.id === id) {
+        let completedTask = arr.splice(i, 1);
+        this.completedTasks.push(...completedTask);
+        console.log(this.completedTasks);
+      }
+    });
   }
 
   delete() {

@@ -19,7 +19,8 @@ import {
   addProjectBtn,
 } from "./projects/projectsRender";
 
-// Create project and render to projects container
+let currProject;
+// Create project
 addProjectBtn.addEventListener("click", () => {
   const newProject = new Project(inputProject.value);
   // const projectRender = addProjectRender(newProject.id);
@@ -32,13 +33,10 @@ addProjectBtn.addEventListener("click", () => {
 });
 
 const proj1 = new Project("workout");
-const proj2 = new Project("Ahaha");
-
-const run = proj1.addTask("run");
-const eat = proj2.addTask("eat");
+const proj2 = new Project("workout2");
+const proj3 = new Project("workout3");
 
 // Render tasks when user clicks project btn
-let currProject;
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("projects__button")) {
     renderTaskAddContainer();
@@ -54,11 +52,21 @@ document.addEventListener("click", (e) => {
 
 // add task to project
 addTaskBtn.addEventListener("click", (e) => {
-  // take the current project
-  // addTaskInput.value
   currProject.addTask(addTaskInput.value);
   tasksRender(currProject);
   addTaskInput.value = "";
+});
+
+// complete task
+document.addEventListener("click", (e) => {
+  if (e.target.getAttribute("type") === "checkbox") {
+    const checkboxTask = e.target;
+    const taskLi = checkboxTask.parentElement;
+    if (checkboxTask.checked) {
+      currProject.completeTask(taskLi.id);
+      taskLi.remove();
+    }
+  }
 });
 
 projectsRender();
