@@ -22,10 +22,10 @@ export default class Project {
     this.tasks.push(newTask);
   }
 
-  archiveTask(id) {
+  archiveTask(task) {
     this.tasks.forEach((e, i) => {
       console.log(e);
-      // if id === e.id => {
+      // if task.id === e.id => {
       //   newArr.push(e) e.archives = true / this.tasks.splice(i, 1)
       // }
     });
@@ -36,15 +36,13 @@ export default class Project {
     //currTask === e.id ? remove from tasks, send to archived
   }
 
+  renderTasks() {
+    render(this.tasks);
+  }
+
   delete() {
     projects.forEach((e, i, arr) => {
       e.id === this.id ? arr.splice(i, 1) : null;
     });
   }
-
-  render() {
-    this.tasks.projectRender();
-  }
-
-  renderProjects() {}
 }
