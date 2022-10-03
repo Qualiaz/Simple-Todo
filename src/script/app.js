@@ -4,6 +4,12 @@ import "../styles/main.scss";
 
 import Task from "./tasks/tasks";
 import tasksRender from "./tasks/tasksRender";
+import {
+  renderTaskAddContainer,
+  addTaskBtn,
+  addTaskInput,
+} from "./tasks/tasksRender";
+
 import Project from "./projects/projects";
 // import addProjectRender from "./projects/projectsRender";
 import { projects } from "./projects/projects";
@@ -32,13 +38,27 @@ const run = proj1.addTask("run");
 const eat = proj2.addTask("eat");
 
 // Render tasks when user clicks project btn
+let currProject;
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("projects__button")) {
+    renderTaskAddContainer();
     const domProjectId = e.target.id;
     projects.forEach((project) => {
-      if (project.id === domProjectId) tasksRender(project);
+      if (project.id === domProjectId) {
+        currProject = project;
+        tasksRender(project);
+      }
     });
   }
+});
+
+// add task to project
+addTaskBtn.addEventListener("click", (e) => {
+  // take the current project
+  // addTaskInput.value
+  currProject.addTask(addTaskInput.value);
+  tasksRender(currProject);
+  addTaskInput.value = "";
 });
 
 projectsRender();
