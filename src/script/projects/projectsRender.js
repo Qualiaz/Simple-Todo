@@ -51,11 +51,11 @@ export function projectsRender() {
     projectBtnName.setAttribute("class", "projects__button");
     projectBtnName.value = e.name;
 
-    const projectBtnDelete = document.createElement("button");
-    projectBtnDelete.textContent = "D";
+    // const projectBtnDelete = document.createElement("button");
+    // projectBtnDelete.textContent = "D";
 
     projectLi.appendChild(projectBtnName);
-    projectLi.appendChild(projectBtnDelete);
+    // projectLi.appendChild(projectBtnDelete);
 
     return e.id;
   });
