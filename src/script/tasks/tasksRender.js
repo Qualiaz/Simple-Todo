@@ -11,7 +11,7 @@ const tasksProjectName = document.createElement("h2");
 tasksContainerProjectName.appendChild(tasksProjectName);
 
 const tasksAddContainer = document.createElement("div");
-tasksAddContainer.setAttribute("class", "task__container--add");
+tasksAddContainer.setAttribute("class", "tasks__container--add");
 tasksContainer.appendChild(tasksAddContainer);
 
 export const addTaskInput = document.createElement("input");
@@ -45,13 +45,16 @@ export default function tasksRender(project) {
 
     const checkBoxTask = document.createElement("input");
     const labelTask = document.createElement("label");
+    const btnDeleteTask = document.createElement("button");
     checkBoxTask.setAttribute("type", "checkbox");
     checkBoxTask.setAttribute("id", `${task.id}-cp`);
     checkBoxTask.setAttribute("value", task.name);
     checkBoxTask.setAttribute("name", task.name);
     labelTask.setAttribute("for", task.name);
     labelTask.textContent = task.name;
+    btnDeleteTask.textContent = "D";
     taskLi.appendChild(checkBoxTask);
     taskLi.appendChild(labelTask);
+    taskLi.appendChild(btnDeleteTask);
   });
 }

@@ -33,6 +33,7 @@ addProjectBtn.addEventListener("click", () => {
 });
 
 const proj1 = new Project("workout");
+proj1.addTask("asd");
 const proj2 = new Project("workout2");
 const proj3 = new Project("workout3");
 
@@ -44,7 +45,7 @@ document.addEventListener("click", (e) => {
     projects.forEach((project) => {
       if (project.id === domProjectId) {
         currProject = project;
-        tasksRender(project);
+        tasksRender(currProject);
       }
     });
   }
@@ -69,4 +70,13 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// TODO
+// delete task btn
+// change task name
+
+// delete project btn
+// change project name
+
 projectsRender();
+tasksRender(proj1);
+renderTaskAddContainer();

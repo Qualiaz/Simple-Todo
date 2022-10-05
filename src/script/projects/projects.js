@@ -37,7 +37,6 @@ export default class Project {
       if (task.id === id) {
         let completedTask = arr.splice(i, 1);
         this.completedTasks.push(...completedTask);
-        console.log(this.completedTasks);
       }
     });
   }

@@ -49,8 +49,13 @@ export function projectsRender() {
     projectBtnName.setAttribute("type", "button");
     projectBtnName.setAttribute("id", e.id);
     projectBtnName.setAttribute("class", "projects__button");
-    projectLi.appendChild(projectBtnName);
     projectBtnName.value = e.name;
+
+    const projectBtnDelete = document.createElement("button");
+    projectBtnDelete.textContent = "D";
+
+    projectLi.appendChild(projectBtnName);
+    projectLi.appendChild(projectBtnDelete);
 
     return e.id;
   });
