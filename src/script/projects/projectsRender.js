@@ -8,6 +8,7 @@ const projectsContainer = document.querySelector(".projects__container");
 const projectsContainerAdd = document.createElement("div");
 projectsContainerAdd.setAttribute("class", "projects__container--add");
 export const inputProject = document.createElement("input");
+inputProject.setAttribute("min", 5);
 inputProject.setAttribute("class", "projects__input");
 export const addProjectBtn = document.createElement("button");
 addProjectBtn.setAttribute("class", "projects__add");

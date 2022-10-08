@@ -9,7 +9,6 @@ export default class Project {
   constructor(name) {
     this.name = name;
     this.tasks = [];
-    // this.archivedTasks = [];
     this.completedTasks = [];
 
     Project.count += 1;
@@ -23,15 +22,6 @@ export default class Project {
     this.tasks.push(newTask);
   }
 
-  archiveTask(task) {
-    this.tasks.forEach((e, i) => {
-      console.log(e);
-      // if task.id === e.id => {
-      //   newArr.push(e) e.archives = true / this.tasks.splice(i, 1)
-      // }
-    });
-  }
-
   completeTask(id) {
     this.tasks.forEach((task, i, arr) => {
       if (task.id === id) {
@@ -41,9 +31,19 @@ export default class Project {
     });
   }
 
+  deleteTask(id) {
+    this.tasks.forEach((task, i, arr) => {
+      if (task.id === id) arr.splice(i, 1);
+    });
+  }
+
   delete() {
     projects.forEach((e, i, arr) => {
       e.id === this.id ? arr.splice(i, 1) : null;
     });
+  }
+
+  changeName(name) {
+    this.name = name;
   }
 }

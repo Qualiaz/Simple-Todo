@@ -7,18 +7,35 @@
     align-items: center;
     width: 50vw;
     height: 50vh;
+    position: relative;
 
-    &--project-name {
-      align-self: flex-start;
-      // border: 1px solid black;
+    &__project {
       display: flex;
+      align-self: flex-start;
       width: 100%;
       margin-bottom: 1rem;
       align-self: flex-start;
+      justify-content: space-between;
 
       h2 {
         margin-top: 1rem;
         margin-left: 2rem;
+      }
+
+      &-options {
+        margin-right: 1.9rem;
+
+        .tasks__project {
+          &--name {
+            margin: 1rem;
+            border-radius: 0.4rem;
+            padding: 0.1rem 0.4rem;
+          }
+          &--delete {
+            padding: 0.1rem 1.4rem;
+            border-radius: 0.4rem;
+          }
+        }
       }
     }
 
@@ -49,7 +66,7 @@
       height: inherit;
       display: flex;
       flex-direction: column;
-      padding: 2rem;
+      padding: 2.5rem;
       overflow: auto;
 
       //individual task
@@ -78,5 +95,11 @@
         }
       }
     }
+  }
+
+  &__completed-count {
+    position: absolute;
+    bottom: -2rem;
+    right: 4rem;
   }
 }
