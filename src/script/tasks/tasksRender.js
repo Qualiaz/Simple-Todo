@@ -86,6 +86,7 @@ export default function tasksRender(project) {
     checkBoxTask.setAttribute("value", task.name);
     checkBoxTask.setAttribute("name", task.name);
     labelTask.setAttribute("for", task.name);
+    labelTask.setAttribute("contenteditable", "true");
     labelTask.textContent = task.name;
     btnDeleteTask.textContent = "D";
     taskLi.appendChild(checkBoxTask);

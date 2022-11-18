@@ -1,9 +1,26 @@
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: rgb(38, 38, 41);
+}
+
 .main {
   &__container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
     // border: 1px solid black;
-    height: 100vh;
+    height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .main {
+    &__container {
+      gap: 1rem;
+    }
   }
 }
